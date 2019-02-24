@@ -1,0 +1,22 @@
+#N canvas 176 23 450 300 10;
+#X obj 23 166 expr~ $v1 > $v2;
+#X obj 23 192 outlet~;
+#X text 203 50 Angle: 0 to 180;
+#X text 203 77 Scale to 0... 0.5;
+#X text 202 103 Shift to 0.9... 0.95;
+#X obj 110 51 inlet;
+#X obj 111 73 / 180;
+#X obj 110 95 * 0.05;
+#X obj 110 119 + 0.9;
+#X obj 110 140 sig~;
+#X obj 23 52 phasor~ 50;
+#X text 130 167 Values above threshold create pulse for PWM;
+#X text 62 2 Simple PWM generator to position servos (used by MIDI_servo.pd
+for Bela), f 40;
+#X connect 0 0 1 0;
+#X connect 5 0 6 0;
+#X connect 6 0 7 0;
+#X connect 7 0 8 0;
+#X connect 8 0 9 0;
+#X connect 9 0 0 1;
+#X connect 10 0 0 0;
